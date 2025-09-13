@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Stories | Hayah Clinic</title>
+    <link rel="icon" type="image/x-icon" href="hayah_favicon.ico">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f9fc;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #005b96, #003d66);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #003d66;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .main-nav {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+        
+        .main-nav li {
+            position: relative;
+        }
+        
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        
+        .main-nav a:hover {
+            background-color: #005b96;
+        }
+        
+        /* Stories Hero Section */
+        .stories-hero {
+            background: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .stories-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 91, 150, 0.7);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Testimonials Grid */
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            color: #005b96;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: #005b96;
+            margin: 0.5rem auto;
+        }
+        
+        .stories-grid {
+            width: 100%;
+            padding: 5rem 2rem;
+            background: url('https://pcictx.org/images/Patient_Stories/patient_happy-4-720.jpg') no-repeat center center;
+            background-size: cover;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .story-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe,
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .story-info {
+            padding: 1.5rem;
+        }
+        
+        .patient-name {
+            color: #005b96;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .treatment {
+            color: #0077b6;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .story-excerpt {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: #005b96;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid #005b96;
+            padding-bottom: 2px;
+        }
+        
+        /* Story Categories */
+        .story-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .category-btn {
+            padding: 0.5rem 1.5rem;
+            background: white;
+            border: 1px solid #005b96;
+            color: #005b96;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background: #005b96;
+            color: white;
+        }
+        
+        /* Full Story Modal */
+        .story-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background: white;
+            max-width: 800px;
+            margin: 2rem auto;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #003d66;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stories-hero {
+                height: 300px;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script src="js/jquery-3.7.1.js"></script>
+    <header>
+        <div class="header-container">
+            <div class="header-flex">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/hospital-room.png" alt="logo" width="40" height="40"/>
+                Hayah Clinic
+            </div>
+            <h1>Patient Success Stories</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <ul class="main-nav">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services list.html">Services</a></li>
+                <li><a href="doctors.html">Find Doctor</a></li>
+                <li><a href="patient stories.html" class="active">Patient Stories</a></li>
+                <li><a href="contact us.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="stories-hero">
+        <div class="hero-content">
+            <h2>Real Patients, Remarkable Journeys</h2>
+            <p>Discover inspiring stories of healing and hope from our Hayah Clinic family</p>
+        </div>
+    </section>
+    
+    <div class="testimonials-container">
+        <h2 class="section-title">Watch Their Stories</h2>
+        
+        <div class="story-categories">
+            <button class="category-btn active" data-category="all">All Stories</button>
+            <button class="category-btn" data-category="cardiology">Cardiology</button>
+            <button class="category-btn" data-category="orthopedics">Orthopedics</button>
+            <button class="category-btn" data-category="oncology">Oncology</button>
+            <button class="category-btn" data-category="pediatrics">Pediatrics</button>
+        </div>
+        <div class="stories-grid">
+            <!-- Story 1 -->
+            <div class="story-card" data-category="cardiology">
+                <div class="video-container">
+                    <video controls autoplay>
+                        <source src="https://cdn.pixabay.com/video/2015/10/28/1210-143977098_tiny.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="story-info">
+                    <h3 class="patient-name">Ahmed Mohamed</h3>
+                    <span class="treatment">Cardiac Bypass Surgery</span>
+                    <p class="story-excerpt">"After my heart attack, Hayah Clinic gave me a second chance at life. The care was exceptional..."</p>
+                    <a href="#" class="read-more" data-story="1">Watch Full Story</a>
+                </div>
+            </div>
+            
+            <!-- Story 2 -->
+            <div class="story-card" data-category="orthopedics">
+                <div class="video-container">
+                    <video controls autoplay>
+                        <source src="https://cdn.pixabay.com/video/2020/05/27/40353-425442466_tiny.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="story-info">
+                    <h3 class="patient-name">Fatima Al-Masry</h3>
+                    <span class="treatment">Knee Replacement</span>
+                    <p class="story-excerpt">"I can walk without pain again! The robotic surgery changed everything..."</p>
+                    <a href="#" class="read-more" data-story="2">Watch Full Story</a>
+                </div>
+            </div>
+            
+            <!-- Story 3 -->
+            <div class="story-card" data-category="oncology">
+                <div class="video-container">
+                    <video controls autoplay>
+                        <source src="https://cdn.pixabay.com/video/2017/01/01/6973-197914400_large.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="story-info">
+                    <h3 class="patient-name">Noura Hassan</h3>
+                    <span class="treatment">Breast Cancer Treatment</span>
+                    <p class="story-excerpt">"My cancer journey was tough, but the Hayah team never let me lose hope..."</p>
+                    <a href="#" class="read-more" data-story="3">Watch Full Story</a>
+                </div>
+            </div>
+            
+            <!-- Story 4 -->
+            <div class="story-card" data-category="pediatrics">
+                <div class="video-container">
+                    <video controls autoplay>
+                        <source src="https://cdn.pixabay.com/video/2021/02/28/66599-518836682_large.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="story-info">
+                    <h3 class="patient-name">The Ali Family</h3>
+                    <span class="treatment">Pediatric Cardiology</span>
+                    <p class="story-excerpt">"They saved our daughter's life with groundbreaking heart surgery..."</p>
+                    <a href="#" class="read-more" data-story="4">Watch Full Story</a>
+                </div>
+            </div>
+            
+            <!-- Story 5 -->
+            <div class="story-card" data-category="orthopedics">
+                <div class="video-container">
+                    <video controls autoplay>
+                        <source src="https://cdn.pixabay.com/video/2025/01/22/253998_tiny.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="story-info">
+                    <h3 class="patient-name">Mahmoud Saleh</h3>
+                    <span class="treatment">Spinal Surgery</span>
+                    <p class="story-excerpt">"After years of back pain, I'm finally pain-free thanks to Hayah's specialists..."</p>
+                    <a href="#" class="read-more" data-story="5">Watch Full Story</a>
+                </div>
+            </div>
+            
+            <!-- Story 6 -->
+            <div class="story-card" data-category="cardiology">
+                <div class="video-container">
+                    <video controls autoplay>
+                        <source src="https://cdn.pixabay.com/video/2020/09/13/49815-458438877_tiny.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="story-info">
+                    <h3 class="patient-name">Youssef Ahmed</h3>
+                    <span class="treatment">Heart Failure Treatment</span>
+                    <p class="story-excerpt">"The advanced heart failure program gave me my life back..."</p>
+                    <a href="#" class="read-more" data-story="6">Watch Full Story</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Full Story Modal -->
+    <div class="story-modal" id="storyModal">
+        <span class="close-modal">×</span>
+        <div class="modal-content">
+            <div class="video-container">
+                <video controls id="modalVideo">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="story-info">
+                <h3 class="patient-name" id="modalName"></h3>
+                <span class="treatment" id="modalTreatment"></span>
+                <p class="story-full" id="modalFullStory"></p>
+                <button class="contact-btn">Contact This Specialist</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <p>© 2025 Hayah Clinic. All rights reserved.</p>
+            <p style="margin-top: 1rem;">Every Patient's Story Matters to Us</p>
+        </div>
+    </footer>
+
+    <script>
+        // Category Filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const storyCards = document.querySelectorAll('.story-card');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const category = btn.dataset.category;
+                
+                storyCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Story Modal
+        const modal = document.getElementById('storyModal');
+        const closeBtn = document.querySelector('.close-modal');
+        const readMoreLinks = document.querySelectorAll('.read-more');
+        
+        const stories = {
+            1: {
+                name: "Ahmed Mohamed",
+                treatment: "Cardiac Bypass Surgery",
+                video: "heart-patient-story.mp4",
+                fullStory: "At 52, I suffered a massive heart attack. The team at Hayah Clinic acted swiftly, performing emergency bypass surgery. Dr. Hassan and his team not only saved my life but gave me comprehensive cardiac rehabilitation. Today, I'm back to playing with my grandchildren and living life to the fullest. The aftercare program taught me how to maintain a heart-healthy lifestyle, and I've never felt better!"
+            },
+            2: {
+                name: "Fatima Al-Masry",
+                treatment: "Knee Replacement",
+                video: "knee-replacement-story.mp4",
+                fullStory: "After 10 years of chronic knee pain, I could barely walk. Traditional surgeries scared me, but Hayah's robotic knee replacement changed everything. The precision was amazing - minimal scarring and I was walking the same day! The physical therapy team worked with me for weeks, and now I can climb stairs pain-free for the first time in decades. I've even started gardening again!"
+            },
+            3: {
+                name: "Noura Hassan",
+                treatment: "Breast Cancer Treatment",
+                video: "cancer-survivor-story.mp4",
+                fullStory: "My diagnosis was devastating, but from the first consultation, the oncology team gave me hope. They created a personalized treatment plan combining chemotherapy, radiation, and emotional support. The nurses became like family, holding my hand through tough treatments. Two years cancer-free now, I volunteer to help other women facing similar battles. Hayah didn't just treat my cancer - they healed my whole being."
+            }
+        };
+        
+        readMoreLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const storyId = link.dataset.story;
+                const story = stories[storyId];
+                
+                if (story) {
+                    document.getElementById('modalName').textContent = story.name;
+                    document.getElementById('modalTreatment').textContent = story.treatment;
+                    document.getElementById('modalFullStory').textContent = story.fullStory;
+                    document.getElementById('modalVideo').src = story.video;
+                    
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            document.getElementById('modalVideo').pause();
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                document.getElementById('modalVideo').pause();
+            }
+        });
+    </script>
+</body>
+</html>

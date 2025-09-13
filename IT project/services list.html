@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Services | Hayah Clinic</title>
+    <link rel="icon" type="image/x-icon" href="hayah_favicon.ico">
+    <style>
+        /* Reset Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Main Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: url('https://media.istockphoto.com/id/587952472/photo/nurse-speaking-to-a-mother-and-child.jpg?s=612x612&w=0&k=20&c=8irSXJjgKRIh_pCT8jNUBIme1D7JZb02TJnQxdGqkxE=') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        h1, h2 {
+            color: #005b96;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #005b96;
+        }
+        
+        h2 {
+            margin-top: 4rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid #005b96;
+            font-size: 1.5rem;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #005b96, #003d66);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        header h2 {
+            margin-top: 0;
+            color: white;
+            border: none;
+            padding: 0;
+        }
+        
+        /* Services Grid */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .services-container:last-of-type {
+            margin-bottom: 1rem;
+        }
+        
+        .service-card {
+            background: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .service-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: #0077b6;
+            font-size: 1.25rem;
+            margin: 0 0 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .service-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #005b96;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+            align-self: flex-start;
+        }
+        
+        .service-link:hover {
+            background: #003d66;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(135deg, #005b96, #003d66);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card {
+                min-height: 350px;
+            }
+            
+            h2 {
+                margin-top: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-flex">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/hospital-room.png" alt="logo" width="40" height="40"/>
+            Hayah Clinic
+        </div>
+        <h2>Hospital Services</h2>
+    </header>
+    
+    <h2>Core Medical Services</h2>
+    <div class="services-container">
+        <div class="service-card">
+            <img src="https://media.istockphoto.com/id/151811860/photo/doctor-and-nurses-wheeling-patient-in-gurney-down-hospital-corridor.jpg?s=612x612&w=0&k=20&c=LJZVFfP_lOovs82EJBaMsXuUYyUY_GiPNdgTmSXBQps=" alt="Emergency service">
+            <h3>Emergency Department & ICU</h3>
+            <p>24/7 emergency care with state-of-the-art intensive care units.</p>
+            <a href="#" class="service-link">Learn More</a>
+        </div>
+        
+        <div class="service-card">
+            <img src="https://media.istockphoto.com/id/1412897673/photo/female-doctor-gestures-while-talking-to-female-patient-in-er.jpg?s=612x612&w=0&k=20&c=S6FdQvklccaM5OYfmgpDSrLn3OYiKmb67OlgOgBOl_0=" alt="Outpatient Clinics">
+            <h3>Outpatient Clinics</h3>
+            <p>Specialized medical consultations across all specialties.</p>
+            <a href="#" class="service-link">Learn More</a>
+        </div>
+        
+        <div class="service-card">
+            <img src="https://media.istockphoto.com/id/1215880332/photo/a-surgeons-team-in-uniform-performs-an-operation-on-a-patient-at-a-cardiac-surgery-clinic.jpg?s=612x612&w=0&k=20&c=fRuUTSy_j2MMPI8yXuROJe4A8LwObO1-d8wSaHouSVI=" alt="Surgical Operations">
+            <h3>Surgical Operations</h3>
+            <p>Advanced surgical procedures with modern equipment.</p>
+            <a href="#" class="service-link">Learn More</a>
+        </div>
+    </div>
+    
+    <h2>Diagnostic Services</h2>
+    <div class="services-container">
+        <div class="service-card">
+            <img src="https://egecmena.com/blog/1695807789rt5XY14WRi" alt="Medical Laboratories">
+            <h3>Medical Laboratories</h3>
+            <p>Comprehensive lab tests with accurate and fast results.</p>
+            <a href="#" class="service-link">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="https://saudishct.com/wp-content/uploads/2022/07/close-up-x-ray-lungs-screen-digital-tablet-scaled.jpg" alt="Radiology service">
+            <h3>Radiology Services</h3>
+            <p>X-ray, MRI, CT Scan and other imaging diagnostics.</p>
+            <a href="#" class="service-link">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="https://sa1s3optim.patientpop.com/assets/images/provider/photos/2079058.jpg" alt="Cardiac test">
+            <h3>Cardiac Tests</h3>
+            <p>Complete heart health assessments including ECG and stress tests.</p>
+            <a href="#" class="service-link">Learn More</a>
+        </div>
+    </div>
+    
+    <h2>Specialized Services</h2>
+    <div class="services-container">
+        <div class="service-card">
+            <img src="https://media.istockphoto.com/id/1334714335/photo/operating-room-with-robotic-surgery-equipment.jpg?s=612x612&w=0&k=20&c=LKkh0xabSlOln7pAEydI53_SOOmw8OENcfbDnmlFs08=" alt="Robotic surgery">
+            <h3>Robotic Surgery</h3>
+            <p>Minimally invasive procedures with precision robotics.</p>
+            <a href="#" class="service-link">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="https://www.insignia.com/wp-content/uploads/2016/06/Screen-Shot-2016-06-09-at-15.35.07.png" alt="Luxury Maternity suites">
+            <h3>Luxury Maternity Suites</h3>
+            <p>Premium birthing experience with personalized care.</p>
+            <a href="#" class="service-link">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="https://darelrahma-eg.com/wp-content/uploads/2022/10/%D8%AA%D9%85%D8%B1%D9%8A%D8%B6-%D9%85%D9%86%D8%B2%D9%84%D9%89-%D8%B7%D9%86%D8%B7%D8%A7.jpg" alt="Telemedicine">
+            <h3>Telemedicine</h3>
+            <p>Remote consultations with our specialists.</p>
+            <a href="#" class="service-link">Learn More</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Hayah Clinic. All rights reserved.</p>
+    </footer>
+</body>
+</html>

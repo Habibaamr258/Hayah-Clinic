@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contacts</title>
+    <link rel="icon" type="image/x-icon" href="hayah_favicon.ico">
+
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa; /* Replaces bg-light */
+            background-image: url('https://i.pinimg.com/736x/d1/b6/32/d1b632638399e00f0dd94ec1bb2f0eca.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Header */
+        header {
+            text-align: center; /* Replaces text-center */
+            color: #fff; /* Replaces text-white */
+            padding-top: 1.5rem; /* Replaces py-4 */
+            padding-bottom: 1.5rem;
+            background: linear-gradient(135deg, rgba(0, 91, 150, 100), rgba(0, 61, 102, 100));
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-flex {
+            display: flex; /* Replaces d-flex */
+            justify-content: center; /* Replaces justify-content-center */
+            align-items: center; /* Replaces align-items-center */
+            gap: 0.5rem; /* Replaces gap-2 */
+            font-size: 1.5rem; /* Replaces fs-3 */
+            font-weight: 700; /* Replaces fw-bold */
+        }
+
+        header h2 {
+            margin-top: 0.5rem; /* Replaces mt-2 */
+        }
+
+        /* Main Content */
+        .container-custom {
+            max-width: 1140px; /* Bootstrap container max-width for large screens */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px; /* Bootstrap container padding */
+            padding-right: 15px;
+            padding-top: 3rem; /* Replaces py-5 */
+            padding-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .row-custom {
+            display: flex; /* Replaces row */
+            flex-wrap: wrap;
+            margin-left: -15px; /* Bootstrap gutter compensation */
+            margin-right: -15px;
+        }
+
+        .col-md-12-custom {
+            flex: 0 0 100%; /* Full width by default */
+            max-width: 100%;
+            padding-left: 15px; /* Bootstrap gutter */
+            padding-right: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .col-md-12-custom {
+                flex: 0 0 100%; /* Replaces col-md-12 */
+                max-width: 100%;
+            }
+        }
+
+        h1.text-dark-custom {
+            color: #212529; /* Replaces text-dark */
+            margin-bottom: 1.5rem; /* Replaces mb-4 */
+        }
+
+        p.text-secondary-custom {
+            font-size: 1rem; /* Replaces fs-6 */
+            color: #6c757d; /* Replaces text-secondary */
+            margin-bottom: 1.5rem; /* Replaces mb-4 */
+        }
+
+        /* Table */
+        .table-responsive-custom {
+            overflow-x: auto; /* Replaces table-responsive */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+        }
+
+        .table-custom {
+            width: 100%; /* Replaces table */
+            border-collapse: collapse;
+            background-color: #fff; /* Bootstrap table background */
+        }
+
+        .table-custom th,
+        .table-custom td {
+            padding: 0.75rem; /* Bootstrap table cell padding */
+            vertical-align: top;
+            border: 1px solid #dee2e6; /* Replaces table-bordered */
+        }
+
+        .table-custom thead {
+            background-color: #e9ecef; /* Replaces table-secondary */
+        }
+
+        .table-custom tbody tr:hover {
+            background-color: #f8f9fa; /* Replaces table-hover */
+        }
+
+        /* Footer */
+        footer {
+            color: #fff; /* Replaces text-white */
+            padding-top: 1rem; /* Replaces py-3 */
+            padding-bottom: 1rem;
+            text-align: center; /* Replaces text-center */
+            background: linear-gradient(135deg, rgba(0, 91, 150, 100), rgba(0, 61, 102, 100));
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-flex">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/hospital-room.png" alt="logo" width="40" height="40"/>
+            Hayah Clinic
+        </div>
+        <h2>Emergency Contacts</h2>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container-custom">
+        <div class="row-custom">
+            <!-- Column for Text and Table -->
+            <div class="col-md-12-custom">
+                <h1 class="text-dark-custom">Emergency Contacts</h1>
+                <p class="text-secondary-custom">
+                    In case of an emergency, please contact the following services immediately. 
+                    Save these numbers to stay prepared and safe at all times.
+                </p>
+
+                <!-- Contacts Table -->
+                <div class="table-responsive-custom">
+                    <table class="table-custom">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Phone Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ambulance</td>
+                                <td>123</td>
+                            </tr>
+                            <tr>
+                                <td>Police</td>
+                                <td>122</td>
+                            </tr>
+                            <tr>
+                                <td>Fire Department</td>
+                                <td>180</td>
+                            </tr>
+                            <tr>
+                                <td>Poison Control</td>
+                                <td>150</td>
+                            </tr>
+                            <tr>
+                                <td>Emergency Hospital</td>
+                                <td>155</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 Hayah Clinic. All rights reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription Management | Hayah Clinic</title>
+      <script src="v2.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+  
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #005b96;
+            --secondary-color: #003d66;
+            --accent-color: #0077b6;
+            --light-color: #f5f9fc;
+            --dark-color: #333;
+            --gray-color: #777;
+            --danger-color: #dc3545;
+            --success-color: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: url('https://img.freepik.com/free-photo/doctor-writing-about-routine-medical-checkup_23-2149281072.jpg?semt=ais_hybrid&w=740') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        header h1 {
+            font-size: 1.8rem;
+        }
+        
+        /* Main Container */
+        .main-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        /* Prescription Form */
+        .prescription-form {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.3);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            color: #000;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .form-title {
+            color: #000;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #000;
+            text-shadow: none;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+   
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+        .error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+.input-error {
+  border-color: red !important;
+}
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(0,91,150,0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        /* Prescriptions List */
+        .prescriptions-list {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+        
+        .list-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .search-box {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 300px;
+            max-width: 100%;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        tr:hover {
+            background-color: #f5f9fc;
+        }
+        
+        .action-btn {
+            padding: 0.3rem 0.6rem;
+            margin-right: 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+        
+        .edit-btn {
+            background-color: var(--accent-color);
+        }
+        
+        .delete-btn {
+            background-color: var(--danger-color);
+        }
+        
+        .view-btn {
+            background-color: var(--success-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .list-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .search-box {
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-flex">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/hospital-room.png" alt="logo" width="40" height="40"/>
+            Hayah Clinic
+        </div>
+        <h1>Prescription Management System</h1>
+    </header>
+    
+    <div class="main-container">
+        <section class="prescription-form">
+            <h2 class="form-title">Create New Prescription</h2>
+            <form id="prescriptionForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="patientId">Patient ID</label>
+                        <input type="text" id="patientId" class="form-control" required>
+                         <div class="error-message"></div>
+
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="patientName">Patient Name</label>
+                        <input type="text" id="patientName" class="form-control" required>
+                          <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="doctorName">Doctor Name</label>
+                        <input type="text" id="doctorName" class="form-control" required>
+                          <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" class="form-control" required>
+
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="diagnosis">Diagnosis</label>
+                    <input type="text" id="diagnosis" class="form-control" required>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="medication">Medication</label>
+                        <input type="text" id="medication" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dosage">Dosage</label>
+                        <input type="text" id="dosage" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="frequency">Frequency</label>
+                        <input type="text" id="frequency" class="form-control" required>
+                          <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="duration">Duration</label>
+                        <input type="text" id="duration" class="form-control" required>
+                          <div class="error-message"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="instructions">Special Instructions</label>
+                    <textarea id="instructions" class="form-control"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-block">Save Prescription</button>
+            </form>
+        </section>
+    </div>
+    
+    <footer>
+        <p>© 2025 Hayah Clinic. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

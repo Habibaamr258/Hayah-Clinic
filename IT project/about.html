@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Hayah Clinic</title>
+    <link rel="icon" type="image/x-icon" href="hayah_favicon.ico">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: url('https://www.aamc.org/sites/default/files/Compassion_GettyImages-1036231890.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #005b96, #003d66);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Replacing Bootstrap flexbox and typography classes */
+        .header-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.875rem;
+            font-weight: bold;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #003d66;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .main-nav {
+            display: flex;
+            list-style: none;
+        }
+        
+        .main-nav li {
+            position: relative;
+        }
+        
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        
+        .main-nav a:hover {
+            background-color: #005b96;
+        }
+        
+        .main-nav a.active {
+            background-color: #005b96;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 20px;
+        }
+        
+        .about-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            color: #005b96;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #005b96;
+        }
+        
+        .about-section p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Mission/Vision Cards */
+        .card-container {
+            position: relative;
+            z-index: 1;
+            padding: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .card {
+            background: rgba(255,255,255,0.85);
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 2rem;
+            transition: transform 0.3s;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h3 {
+            color: #005b96;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .stat-item {
+            background: #005b96;
+            color: white;
+            padding: 2rem 1rem;
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #003d66;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-nav {
+                flex-direction: column;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .about-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/hospital-room.png" alt="logo" width="40" height="40"/>
+                Hayah Clinic
+            </div>
+            <h1>About Us</h1>
+            <p>Compassionate care, innovative medicine, and relentless dedication to our patients</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <ul class="main-nav">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services list.html">Services</a></li>
+                <li><a href="doctors.html">Doctors</a></li>
+                <li><a href="patient stories.html">patient stories</a></li>
+                <li><a href="Prescription Management .html">create your prescription</a></li>
+                <li><a href="contact us.html">Contact</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section class="about-section">
+            <h2 class="section-title">Our Story</h2>
+            <p>Founded in 2005, Hayah Clinic has grown from a small community hospital to a leading healthcare institution serving patients across the region. Our journey began with a simple mission: to provide exceptional medical care to every patient who walks through our doors.</p>
+            
+            <p>Today, we're recognized as a pioneer in patient-centered care, combining cutting-edge technology with compassionate service. Our team of world-class physicians, nurses, and healthcare professionals work together to deliver the best possible outcomes for our patients.</p>
+            
+            <p>What sets us apart is our unwavering commitment to treating each patient as an individual, not just a case number. We take the time to listen, understand, and develop personalized treatment plans that address not just physical symptoms, but emotional and spiritual needs as well.</p>
+        </section>
+        
+        <h2 class="section-title">Our Mission & Vision</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>To inspire hope and contribute to health and well-being by providing the best care to every patient through integrated clinical practice, education, and research.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Our Vision</h3>
+                <p>To transform medicine through innovation, quality care, and service to humanity, becoming the most trusted partner for life in health and healing.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Our Values</h3>
+                <p>Compassion, Excellence, Integrity, Teamwork, Innovation, and Stewardship guide every decision we make and every interaction we have with our patients.</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title">By The Numbers</h2>
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Physicians</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number">1,200+</div>
+                <div class="stat-label">Healthcare Staff</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Specialty Centers</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number">250K+</div>
+                <div class="stat-label">Patients Annually</div>
+            </div>
+        </div>
+        
+        <section class="about-section">
+            <h2 class="section-title">Our Facilities</h2>
+            <p>Hayah Clinic's state-of-the-art facilities are designed with patient comfort and healing in mind. Our main campus spans over 1 million square feet, featuring:</p>
+            
+            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                <li>Advanced surgical suites with robotic technology</li>
+                <li>Comprehensive cancer treatment center</li>
+                <li>24/7 emergency department with Level I trauma center</li>
+                <li>Modern patient rooms with family accommodations</li>
+                <li>Healing gardens and meditation spaces</li>
+            </ul>
+            
+            <p>We continuously invest in the latest medical technologies and facility upgrades to ensure our patients receive care in the most advanced healing environment possible.</p>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <p>© 2025 Hayah Clinic. All rights reserved.</p>
+            <p style="margin-top: 1rem;">Compassionate Care. Exceptional Results.</p>
+        </div>
+    </footer>
+</body>
+</html>

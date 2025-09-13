@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hayah Clinic - Patient Portal Register</title>
+  <link rel="icon" type="image/x-icon" href="hayah_favicon.ico" />
+  <script src="validation.js" defer></script>
+
+  <style>
+    body {
+      background-image: url('https://i.pinimg.com/736x/ac/d3/f3/acd3f3ec04de4343518089a3309fbba9.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      min-height: 100vh;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .main-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(255, 255, 255, 0.78);
+    }
+  
+    input.error {
+      border: 1px solid red;
+    }
+
+    small {
+      display: block;
+      margin-top: 5px;
+      color: red; 
+      font-size: 0.9rem;
+    }
+
+    header {
+      text-align: center;
+      color: white;
+      padding: 1.5rem 0;
+      background: linear-gradient(135deg, #005b96, #003d66);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    header h2 {
+      margin-top: 0.5rem;
+    }
+
+    .container-custom {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .register-form {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+      padding: 1.5rem;
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-label {
+      font-weight: bold;
+      color: #212529;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+    }
+
+    .form-check {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-check-input {
+      margin-right: 0.5rem;
+    }
+
+    .form-check-label {
+      color: #212529;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .input-group .form-control {
+      flex: 1;
+    }
+
+    .input-group .btn-outline-primary {
+      padding: 0.5rem 1rem;
+      border: 1px solid #005b96;
+      background: white;
+      color: #005b96;
+      cursor: pointer;
+      border-radius: 0.25rem;
+    }
+
+    .input-group .btn-outline-primary:hover {
+      background: #e9f2f9;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #005b96, #0077b6);
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      width: 100%;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background-color: #e9f2f9;
+      border-top: 1px solid #ccc;
+    }
+
+    footer p {
+      margin: 0;
+      color: #005b96;
+    }
+
+    footer a {
+      color: #005b96;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <header>
+      <div class="header-flex">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/hospital-room.png" alt="logo" width="40" height="40"/>
+        Hayah Clinic
+      </div>
+      <h2>CREATE AN ACCOUNT</h2>
+      <h5>Register to access patient portal</h5>
+    </header>
+
+    <div class="container-custom">
+      <form class="register-form" action="/submit" method="POST">
+        <div class="form-group">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="age" class="form-label">Age</label>
+          <input type="number" class="form-control" id="age" name="age" placeholder="Enter your age" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Gender</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="Male" required>
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="female" value="Female" required>
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <div class="input-group">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+            <button class="btn-outline-primary" type="button" id="togglePassword">SHOW</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+        </div>
+
+        <button type="submit" class="btn-primary">REGISTER</button>
+          <button type="button" id="clearData" class="btn-primary" style="margin-top: 5px; background: #e63946; border: none;">
+  Clear Data
+</button>
+      </form>
+    </div>
+
+    <footer>
+      <p>
+        <span>Already have an account?</span>
+        <a href="login.html">Login now</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

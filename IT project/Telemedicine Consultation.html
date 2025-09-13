@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Telemedicine Consultation | Hayah Clinic</title>
+  <link rel="icon" type="image/x-icon" href="hayah_favicon.ico" />
+  <style>
+    body {
+      background-image: url('https://i.pinimg.com/736x/72/3b/f8/723bf831b674ed3fefdcd0e9c0030644.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(135deg, #005b96, #003d66);
+      color: white;
+      padding: 1.5rem 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    header h2 {
+      margin-top: 0.5rem;
+      font-size: 1.8rem;
+    }
+
+    .main-content {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    .content-wrapper {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .text-section {
+      flex: 1;
+      text-align: center;
+    }
+
+    .btn-primary-custom {
+      background-color: #003d66;
+      border: none;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary-custom:hover {
+      background-color: #005b96;
+    }
+
+    .hero-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #003d66;
+      margin-top: 1rem;
+    }
+
+    .image-section {
+      flex: 1;
+      text-align: right;
+    }
+
+    .image-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #003d66;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .image-section {
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      .btn-primary-custom {
+        width: 100%;
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-flex">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/hospital-room.png" alt="logo" width="40" height="40"/>
+      Hayah Clinic
+    </div>
+    <h2>Telemedicine Consultation</h2>
+  </header>
+
+  <div class="main-content">
+    <div class="content-wrapper">
+      <div class="text-section">
+        <a href="appoi.html" class="btn-primary-custom">Book Now</a>
+        <p class="hero-text">
+          Connect with our experienced doctors from the comfort of your home. Book your online consultation today and receive expert medical advice without the need to visit the clinic.
+        </p>
+      </div>
+      <div class="image-section">
+        <img src="https://i.pinimg.com/736x/7e/cc/2b/7ecc2b67e64d39253d5ae6c99117c084.jpg" alt="Consultation Icon">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Telemedicine Services. All rights reserved.</p>
+  </footer>
+</body>
+</html>

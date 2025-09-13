@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dr. Omar Khaled - Profile</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #d4ebf9, #ffffff);
+    }
+
+    .profile-container {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      width: 100%;
+      max-width: 1000px;
+      margin: 50px auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .profile-image {
+      width: 45%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .profile-details {
+      width: 55%;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    /* Replacing Bootstrap classes with custom CSS */
+    .text-start {
+      text-align: left;
+    }
+
+    .mt-3 {
+      margin-top: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      user-select: none;
+      border: 1px solid transparent;
+      padding: 6px 12px;
+      font-size: 16px;
+      line-height: 1.5;
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+
+    .btn-secondary {
+      color: #fff;
+      background-color: #6c757d;
+      border-color: #6c757d;
+    }
+
+    .btn-secondary:hover {
+      background-color: #5a6268;
+      border-color: #545b62;
+    }
+
+    .btn-lg {
+      padding: 10px 16px;
+      font-size: 18px;
+      line-height: 1.3333333;
+      border-radius: 6px;
+    }
+
+    .me-2 {
+      margin-right: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .profile-container {
+        flex-direction: column;
+      }
+
+      .profile-image,
+      .profile-details {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <!-- الصورة -->
+    <img src="https://i.pinimg.com/474x/6c/6e/d7/6c6ed7f4011b7f926b3f1505475aba16.jpg"
+         alt="Dr. Omar Khaled"
+         class="profile-image">
+
+    <!-- البيانات -->
+    <div class="profile-details text-start">
+      <h1>Dr. Omar Khaled - Orthopedic Surgeon</h1>
+      <h4><strong>Specialization:</strong> Orthopedics</h4>
+      <h4><strong>Biography:</strong> Dr. Omar Khaled specializes in bone and joint surgeries, including sports injuries and arthritis treatments. Known for minimally invasive techniques and advanced orthopedic care.</h4>
+      <h4><strong>Education:</strong> Graduated from Cairo University, Faculty of Medicine. Completed orthopedic residency at El-Helal Hospital.</h4>
+      <h4><strong>Experience:</strong> Over 14 years in orthopedic surgery with a focus on joint replacement, trauma management, and arthroscopy.</h4>
+      <h4><strong>Patient Philosophy:</strong> Dedicated to helping patients return to active life through personalized treatment plans and rehabilitation.</h4>
+      <h4><strong>Languages Spoken:</strong> Arabic, English</h4>
+      <h4><strong>Community Work:</strong> Runs free sports injury clinics for youth athletes and participates in public awareness campaigns about bone health.</h4>
+      <h4><strong>Available:</strong> Sun-Thu, 9:00 AM - 4:00 PM</h4>
+
+      <div class="mt-3">
+        <a href="appointment system.html" class="btn btn-primary btn-lg me-2">Book Appointment</a>
+        <a href="doctors.html" class="btn btn-secondary btn-lg">Back to Doctors</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

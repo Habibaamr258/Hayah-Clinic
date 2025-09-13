@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Doctors - Hayah Clinic</title>
+    <link rel="icon" type="image/x-icon" href="media/hayah_favicon.ico">
+
+    <link rel="stylesheet" href="doctors.css">
+</head>
+<body>
+
+    <header class="fade-in fade-in-delay-1">
+        <div class="header-container">
+            <div class="header-flex">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/hospital-room.png" alt="logo" width="40" height="40"/>
+                Hayah Clinic
+            </div>
+            <h1>Our Doctors</h1>
+            <p>Meet our team of world-class specialists</p>
+        </div>
+    </header>
+
+    <nav class="fade-in fade-in-delay-2">
+        <div class="nav-container">
+            <ul class="main-nav">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services list.html">Services</a></li>
+                <li><a href="doctors.html" class="active">Doctors</a></li>
+                <li><a href="contact us.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="appointment system.html">Request Appointments</a></li>
+                <li><a href="appointment calender.html">Appointments Calendar</a></li>
+                <li><a href="Prescription Management .html">Create Your Prescription</a></li>
+                <li><a href="patient stories.html">Our Success Stories</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container fade-in fade-in-delay-3">
+        <h2 class="section-title">Find Your Specialist</h2>
+
+        <div class="search-filter" role="search">
+            <div class="search-group">
+                <input type="text" class="search-input" placeholder="Enter doctor name or specialty..." aria-label="Search doctors">
+                <button aria-label="Search">Search</button>
+            </div>
+
+            <div class="filter-group">
+                <select class="filter-select" aria-label="Filter by specialty">
+                    <option value="">All Specialties</option>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="neurology">Neurology</option>
+                    <option value="orthopedics">Orthopedics</option>
+                    <option value="pediatrics">Pediatrics</option>
+                    <option value="oncology">Oncology</option>
+                    <option value="dermatology">Dermatology</option>
+                </select>
+
+                <select class="filter-select" aria-label="Filter by location">
+                    <option value="">All Locations</option>
+                    <option value="maadi">Maadi Branch</option>
+                    <option value="october">6 October Branch</option>
+                    <option value="faisal">Faisal Branch</option>
+                </select>
+
+                <select class="filter-select" aria-label="Filter by language">
+                    <option value="">All Languages</option>
+                    <option value="english">English</option>
+                    <option value="arabic">Arabic</option>
+                    <option value="french">French</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="no-results" id="no-results" aria-live="polite">
+            No doctors found matching your criteria.
+        </div>
+
+        <div class="doctors-grid fade-in fade-in-delay-4" id="doctors-grid">
+            <div class="doctor-card" data-name="ahmed mahmoud" data-specialty="cardiology" data-location="maadi" data-language="english arabic">
+                <div class="doctor-image">
+                    <img src="https://i.pinimg.com/474x/3e/96/55/3e965511a91dd46dec3dca37ee41998f.jpg" alt="Dr. Ahmed Mahmoud">
+                </div>
+                <div class="doctor-info">
+                    <h3 class="doctor-name">Dr. Ahmed Mahmoud</h3>
+                    <span class="doctor-specialty">Cardiologist</span>
+                    <p class="doctor-bio">Board-certified cardiologist with 15 years of experience.</p>
+                    <a href="doctor_ahmed_profile.html" class="view-profile">View Profile</a>
+                </div>
+            </div>
+
+            <div class="doctor-card" data-name="mona salah" data-specialty="neurology" data-location="october" data-language="english arabic">
+                <div class="doctor-image">
+                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dr. Mona Salah">
+                </div>
+                <div class="doctor-info">
+                    <h3 class="doctor-name">Dr. Mona Salah</h3>
+                    <span class="doctor-specialty">Neurologist</span>
+                    <p class="doctor-bio">Specializes in neurological disorders like epilepsy.</p>
+                    <a href="doctor_Mona Salah_profile.html" class="view-profile">View Profile</a>
+                </div>
+            </div>
+
+            <div class="doctor-card" data-name="youssef hassan" data-specialty="orthopedics" data-location="faisal" data-language="english arabic">
+                <div class="doctor-image">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dr. Youssef Hassan">
+                </div>
+                <div class="doctor-info">
+                    <h3 class="doctor-name">Dr. Youssef Hassan</h3>
+                    <span class="doctor-specialty">Orthopedic Surgeon</span>
+                    <p class="doctor-bio">Expert in joint replacement and sports medicine.</p>
+                    <a href="doctor_Youssef Hassan_profile.html" class="view-profile">View Profile</a>
+                </div>
+            </div>
+
+            <div class="doctor-card" data-name="leila farouk" data-specialty="pediatrics" data-location="maadi" data-language="english arabic french">
+                <div class="doctor-image">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dr. Leila Farouk">
+                </div>
+                <div class="doctor-info">
+                    <h3 class="doctor-name">Dr. Leila Farouk</h3>
+                    <span class="doctor-specialty">Pediatrician</span>
+                    <p class="doctor-bio">Compassionate care for children.</p>
+                    <a href="doctor_Leila Farouk_profile.html" class="view-profile">View Profile</a>
+                </div>
+            </div>
+
+            <div class="doctor-card" data-name="omar khaled" data-specialty="oncology" data-location="october" data-language="english arabic">
+                <div class="doctor-image">
+                    <img src="https://i.pinimg.com/474x/6c/6e/d7/6c6ed7f4011b7f926b3f1505475aba16.jpg" alt="Dr. Omar Khaled">
+                </div>
+                <div class="doctor-info">
+                    <h3 class="doctor-name">Dr. Omar Khaled</h3>
+                    <span class="doctor-specialty">Oncologist</span>
+                    <p class="doctor-bio">Expertise in breast cancer treatment.</p>
+                    <a href="doctor_Omar Khaled_profile.html" class="view-profile">View Profile</a>
+                </div>
+            </div>
+
+            <div class="doctor-card" data-name="nadia sherif" data-specialty="dermatology" data-location="faisal" data-language="english arabic">
+                <div class="doctor-image">
+                    <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dr. Nadia Sherif">
+                </div>
+                <div class="doctor-info">
+                    <h3 class="doctor-name">Dr. Nadia Sherif</h3>
+                    <span class="doctor-specialty">Dermatologist</span>
+                    <p class="doctor-bio">Specializes in cosmetic dermatology.</p>
+                    <a href="doctor_Nadia Sherif_profile.html" class="view-profile">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="fade-in fade-in-delay-1">
+        <div class="footer-container">
+            <p>© 2025 Hayah Clinic. All rights reserved.</p>
+            <p style="margin-top: 1rem;">Compassionate Care. Exceptional Results.</p>
+        </div>
+    </footer>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
